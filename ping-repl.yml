@@ -1,0 +1,15 @@
+# .github/workflows/ping-repl.yml
+name: Ping Repl Bot
+
+# Срабатывает раз в 5 минут по cron
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  ping-repl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Replit URL
+        run: |
+          curl -Is https://c07bc5e7-5be4-4c6b-b718-f4c3e65252d9-00-1ifi3qiinhn96.picard.replit.dev/ || true
